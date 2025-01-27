@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    transition: transform 0.4s ease;
+}
+a:hover{
+    transition: transform 0.4s ease;
+    transform: scale(1.5);
+
+}
+
+.grid-box{
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "busqueda"
+    "gallery"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: .9fr 1fr auto .9fr;
+    height: auto;
+}
+
+.nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    background-color: #40916c;
+    align-items: center;
+    
+    
+}
+h1{
+    font-weight: 100;
+}
+.nav-left{
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+    width: 7%;
+    justify-content: space-between;
+    gap: 1em
+}
+
+.nav-desktop{
+    display: flex;
+    gap: 1em;
+    margin-right: 1em;
+
+}
+
+.busqueda{
+    grid-area: busqueda;
+    display: flex;
+    background-color: #1b4332;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    gap: 0.5em;
+
+}
+.busqueda p{
+    color: #d8f3dc;
+}
+.select{
+    width: 80%;
+}
+.gallery{
+    grid-area: gallery;
+    background-color: #d8f3dc;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.card{
+    display: flex;
+    background-color: #b7e4c7;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    transition: all 0.4s ease;
+    border-radius: 4em;
+
+}
+.card:hover{
+    transition: all 0.4s ease;
+    background-color:#74c69d;
+    border-radius: 1em;
+}
+
+
+
+
+img{
+    max-width: 80%;
+    height: 65%;
+    border-radius: 4rem;
+}
+.card-footer{
+    display: flex;
+    height: 10%;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    gap: 0.5em;
+}
+h4{
+    font-weight: 200;
+}
+.button {
+    border: none;
+    color: #132a13;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+.button:hover{
+    transition: all 0.4s ease;
+    scale: 1.1;
+    background-color:#97ecce;
+}
+.footer{
+    grid-area: footer;
+    background-color: #2d6a4f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (min-width: 576px) {
+    .grid-box{
+        grid-template-areas: 
+        "nav busqueda"
+        "nav gallery"
+        "footer gallery";
+        grid-template-columns: 2fr 10fr;
+        grid-template-rows: auto;
+    }
+    .nav{
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1em;
+        justify-content: start;
+        gap: 2em;
+        background-color:#081c15;
+        color:#57bd8f;
+    }
+
+    .nav-left{
+        margin-left: 0;
+        width: auto;
+    }
+    .solid-bars{
+        display: none;
+    }
+    .nav-desktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:1em;
+    }
+    .busqueda{
+        height: 7vh;
+        background-color: #40916c;
+    }
+    .busqueda p{
+        color:#030c09;
+    }
+    .footer{
+        text-align: center;
+        height: 10vh;
+    }
+    .gallery{
+    overflow-y: auto;
+    height: calc(100vh - 7vh);
+    }
+
+}
